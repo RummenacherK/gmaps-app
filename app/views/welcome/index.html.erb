@@ -1,5 +1,19 @@
 <div class="row">
   <div class="col-md-12">
+    <div class="btn">
+      <%= link_to "To Destinations List", destinations_path %>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
     <div id="map-canvas"></div>
   </div>
 </div>
+
+<%= javascript_tag do %>
+   var latitude = '<%= j @destination.latitude.to_s %>';
+   var longitude = '<%= j @destination.longitude.to_s %>';
+   var address = '<%= j @destination.city %>';
+<% end %>
